@@ -1,11 +1,27 @@
-
-var names = prompt('Input your array:');
-var arr = names.split(', ');
+var arr = '1+22+333';
+// ['1', '22', '333'];
+var DELIMETER = '+';
 var i = 0;
-while(i < arr.length) {
+var result = [];
+var accumulator = '';
+
+while (i < arr.length) {
+  if (arr[i] != DELIMETER) {
+    accumulator +=  arr[i];
+  }else{
+    result[result.length] = accumulator;
+    accumulator = '';
+  }
   i++;
 }
-alert( 'Your array is: ' + arr);
+if (accumulator != '') {
+  result[result.length] = accumulator;
+}
+alert('Your array is: ' + result);
+
+
+
+
 
 
 
